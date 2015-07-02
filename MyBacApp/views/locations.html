@@ -1,0 +1,59 @@
+<div data-role="view" data-title="Locations" data-layout="main" data-model="APP.models.locations">
+ 
+<!--/HTML-->
+    <div id="surface" style="width: 250px; height: 250px;"></div>
+  
+	<div id="football-results" data-role="view">
+    <div class="hero"></div>
+    	<div id="contentCollapse" data-bind="source: lista" data-template="things-template">
+        </div>
+    
+    </br>
+    <strong id="result">Resultado</strong>
+  </br>
+    <button onClick="printOpenItems()">¿Quienes estan colapsados?</Button>
+</div>
+<!--/HTML-->
+<!--Script-->
+<script type="x-kendo-template" id="things-template">
+    <div data-role="collapsible">
+        <h3>#= data.key#</h3><div>
+            <div id="scrollView" data-role="scrollview"
+                 data-source="ds"
+                 data-template="scrollview-template"
+                 data-content-height="140px">
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script id="scrollview-template" type="text/x-kendo-template">
+    <div style="width: 110px; height: 110px;background-image: url('#: img#'); background-size:100%; "></div>
+    <p>#: texto#</p>
+</script>
+
+<script>
+    var app = new kendo.mobile.Application(document.body);
+
+    var link_Ascend_G610 = "https://www.compramerica.com/images/prods/206226_400_9671.jpg";
+    var link_Huawei_Ascend_D2 = "http://mla-s2-p.mlstatic.com/16424-MLA20121426772_072014-O.jpg";
+
+    var trueDS = [{ texto: 'Huawei Ascend G610', img: link_Ascend_G610 }, { texto: 'Huawei Ascend D2', img: link_Huawei_Ascend_D2 }];
+
+    var ds = new kendo.data.DataSource({
+        data: trueDS
+    });
+
+    (function () {
+         app = new kendo.mobile.Application(document.body);
+        var variableN = kendo.observable({
+            lista: [{ key: "Products", value: "" }, { key: "Services", value: "" }, { key: "Others", value: "" }]
+        });
+        kendo.bind(document.body, variableN);
+    }());
+     
+
+</script>
+</div>
+

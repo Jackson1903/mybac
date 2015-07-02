@@ -8,20 +8,14 @@
     // create an object to store the models for each view
     window.APP = {
       models: {
-        home: {
-          title: 'Home'
+        login: {
+          title: 'iBAC'
         },
-        settings: {
-          title: 'Settings'
+        rate: {
+          title: 'Tipo de Cambio'
         },
-        contacts: {
-          title: 'Contacts',
-          ds: new kendo.data.DataSource({
-            data: [{ id: 1, name: 'Bob' }, { id: 2, name: 'Mary' }, { id: 3, name: 'John' }]
-          }),
-          alert: function(e) {
-            alert(e.data.name);
-          }
+        locations: {
+          title: 'Ubícanos'
         }
       }
     };
@@ -43,7 +37,7 @@
         skin: 'flat',
 
         // the application needs to know which view to load first
-        initial: 'views/home.html'
+        initial: 'views/login.html'
       });
 
     }, false);

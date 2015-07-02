@@ -1,0 +1,55 @@
+<div data-role="view" data-title="Exchange Rate" data-layout="main" data-model="APP.models.rate">
+  <h1 data-bind="html: title"></h1>
+  <div id="example">
+       <input type="checkbox" data-role="switch" data-checked="true" />
+     	<table id="grid">
+                <colgroup>
+                    <col />
+                    <col />
+                    <col style="width:110px" />
+                    <col style="width:120px" />
+                    <col style="width:130px" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th data-field="make">Pais</th>
+                        <th data-field="model">Compra</th>
+                        <th data-field="year">Venta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Costa Rica</td>
+                        <td>560</td>
+                        <td>420</td>
+                    </tr>
+                    <tr>
+                        <td>Honduras</td>
+                        <td>560</td>
+                        <td>420</td>
+                    </tr>
+                    <tr>
+                        <td>Salvador</td>
+                        <td>560</td>
+                        <td>420</td>
+                    </tr>
+                    <tr>
+                        <td>Panama</td>
+                        <td>560</td>
+                        <td>420</td>
+                    </tr>
+                  </tbody>
+            </table>
+
+            <script type>
+                $(document).ready(function() {
+                    $("#grid").kendoGrid({
+                        height: 550,
+                        sortable: true
+                    });
+                });
+            </script>
+        </div>
+
+
+</div>
